@@ -1,0 +1,56 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+
+body {
+  background: #f5f5f5;
+  font-size: 16px;
+}
+
+#login-title{
+  text-align: center
+}
+
+div > .titulo_principal {
+  color: red;
+  background-color: yellow;
+}
+
+/*más o menos una pista de como hacer la vista de la tarea*/
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 2em auto;
+}
+
+label {
+  margin-top: 0.5em;
+}
+.form-control {
+  padding: 1em;
+  border: 0.0645em solid;
+  border-radius: 0.5em;
+}
+
+form > div > .btn-pr {
+  margin-top: 1.5em;
+  width: 40%;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: #fff;
+  background-color: blue;
+  float: right;
+}
+
+form > div > .btn-succ {
+  margin-top: 1.5em;
+  width: 40%;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: #fff;
+  background-color: green;
+  float: left;
+}
+
