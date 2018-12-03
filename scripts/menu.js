@@ -26,7 +26,7 @@ function post(){
                 var username = response[i].userName;
                 var totalLikes = response[i].likes;
                 var like = response[i].liked;
-                var createdAt = new Date(response[i].createdAt).toLocaleDateString('es-RD');;
+                var createdAt = new Date(response[i].createdAt).toLocaleDateString('es-RD');
                 var comment = response[i].comments;
                 var views = response[i].views;
                 var tags = response[i].tags;
@@ -116,12 +116,12 @@ $(document).ready(function(){
                 'Authorization' : 'Bearer '+token
             }
           }).then(function(response){
-            $(this).css("color",'');
+            post();
           })
           .catch(error => console.error('Error:', error));
     });
 
     $('#crearPost').click(function(e){
         window.location = 'crear_post.html';
-    })
+    });
 });
