@@ -108,6 +108,28 @@ function getComentarios(){
       .catch(error => console.error('Error:', error));  
 }
 
+function setComentarios(){
+    let token = JSON.parse(localStorage.getItem('usuario')).token;
+    let id = getParameterByName('id');
+    let body = $('#comment').val();
+
+    data = {
+        body:body
+    };
+
+    fetch("http://68.183.27.173:8080/post/"+id+"/comment", {
+        method: 'POST', 
+        body: JSON.stringify(data), 
+        headers:{
+            'Authorization' : 'Bearer '+token
+        }
+      }).then(function(response){
+        getComentarios();
+        $('#comment').val('');
+      })
+      .catch(error => console.error('Error:', error));
+}
+
 
 $(document).ready(function(){
     
@@ -123,6 +145,10 @@ $(document).ready(function(){
 
     $('#crearPost').click(function(e){
         window.location = 'crear_post.html';
+    });
+
+    $('#btnComment').click(function(e){
+        setComentarios();
     });
 
     $(document).on('click','.like',function(e){
