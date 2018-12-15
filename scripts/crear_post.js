@@ -6,9 +6,15 @@ function logout(){
 
 function guardarPost(){
     let token = JSON.parse(localStorage.getItem('usuario')).token;
-    let title = $('#titulo').val();
-    let body = $('#texto').val();
+    let title = $('#titulo').val().trim();
+    let body = $('#texto').val().trim();
     let tags = [$('#tags').val()];
+
+    if(title == '')
+        return;
+
+    if(body == '')
+        return;
 
     var data = {
         title:title,
@@ -48,6 +54,10 @@ $(document).ready(function(){
 
     $('#btnGuardarPost').click(function(e){
         guardarPost();
+    });
+
+    $('#btnCancelar').click(function(e){
+        window.location="menu.html";
     });
 
     //tags
